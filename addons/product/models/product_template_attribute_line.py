@@ -89,7 +89,6 @@ class ProductTemplateAttributeLine(models.Model):
             # previous step. Since `vals_list` will likely be a small list in
             # all use cases, this is an acceptable trade-off.
             archived_ptal = self.search([
-                ('active', '=', False),
                 ('product_tmpl_id', '=', vals.pop('product_tmpl_id', 0)),
                 ('attribute_id', '=', vals.pop('attribute_id', 0)),
             ], limit=1)
